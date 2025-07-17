@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using infrastructure.Data.EF.Entities;
+using domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace infrastructure.Data.EF;

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace infrastructure.Data.EF.Entities;
+﻿namespace domain.Entities;
 
 public partial class servicios
 {
