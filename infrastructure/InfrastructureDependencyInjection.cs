@@ -1,4 +1,4 @@
-﻿using application.Interfaces;
+﻿using application.common.Interfaces;
 using domain.Interfaces;
 using infrastructure.Data.EF;
 using infrastructure.Repositories;

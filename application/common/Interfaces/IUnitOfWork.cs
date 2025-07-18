@@ -1,6 +1,6 @@
 ﻿using domain.Interfaces;
 
-namespace application.Interfaces;
+namespace application.common.Interfaces;
 
 public interface IUnitOfWork
 {
