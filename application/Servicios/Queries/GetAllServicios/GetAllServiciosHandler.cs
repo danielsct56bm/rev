@@ -3,7 +3,7 @@ using MediatR;
 
 namespace application.Servicios.Queries.GetAllServicios;
 
-public class GetAllServiciosHandler:IRequestHandler<GetAllServiciosQueries,List<ServicioDto>>
+public class GetAllServiciosHandler:IRequestHandler<GetAllServiciosQuery,List<ServicioDto>>
 {
     private readonly IUnitOfWork _unitOfWork;
 
@@ -12,7 +12,7 @@ public class GetAllServiciosHandler:IRequestHandler<GetAllServiciosQueries,List<
         _unitOfWork = unitOfWork;
     }
     
-    public async Task<List<ServicioDto>> Handle(GetAllServiciosQueries request, CancellationToken cancellationToken)
+    public async Task<List<ServicioDto>> Handle(GetAllServiciosQuery request, CancellationToken cancellationToken)
     {
         var servicios = await _unitOfWork.Servicios.GetAllAsync();
         return servicios.Select(x=> new ServicioDto
