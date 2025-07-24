@@ -5,7 +5,7 @@ using MediatR;
 
 namespace application.Clientes.Commands.CreateCliente;
 
-public class CreateClienteHandler: IRequestHandler<CreateClienteCommand, int>
+public class CreateClienteHandler: IRequestHandler<CreateClienteCommand, Unit>
 {
     private readonly IUnitOfWork _unitOfWork;
 
@@ -14,7 +14,7 @@ public class CreateClienteHandler: IRequestHandler<CreateClienteCommand, int>
         _unitOfWork = unitOfWork;
     }
     
-    public async Task<int> Handle(CreateClienteCommand request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(CreateClienteCommand request, CancellationToken cancellationToken)
     {
         var cliente = new clientes
         {
@@ -25,6 +25,6 @@ public class CreateClienteHandler: IRequestHandler<CreateClienteCommand, int>
         await _unitOfWork.Clientes.AddAsync(cliente);
         await _unitOfWork.SaveChangesAsync();
 
-        return cliente.id;
+        return Unit.Value;
     }
 }

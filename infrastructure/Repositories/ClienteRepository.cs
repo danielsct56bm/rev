@@ -28,8 +28,9 @@ public class ClienteRepository: IClienteRepository
         var result = await _context.clientes
             .FromSqlInterpolated($"CALL ObtenerClientePorId({id})")
             .AsNoTracking()
-            .FirstOrDefaultAsync();
-        return result;
+            .ToListAsync();
+        
+        return result.FirstOrDefault();
     }
 
     public async Task AddAsync(clientes cliente)

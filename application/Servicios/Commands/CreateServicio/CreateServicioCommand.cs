@@ -8,5 +8,4 @@ public class CreateServicioCommand: IRequest<Unit>
     public string servicio { get; set; }
     public DateTime? fechaRenovacion { get; set; }
     public decimal monto { get; set; }
-    
 }
